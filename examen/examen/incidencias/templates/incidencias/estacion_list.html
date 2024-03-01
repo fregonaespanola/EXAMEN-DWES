@@ -1,0 +1,16 @@
+{% extends 'incidencias/base.html' %}
+
+{% block contenido %}
+<h1>Listado de Líneas de Metro</h1>
+<ul>
+    {% for estacion in estaciones %}
+        <li>{{ estacion.linea.nombre }} - {{ estacion.nombre }} 
+            <a href="{% url 'incidencias:nueva_incidencia' estacion_id=estacion.id %}">Nueva incidencia</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock contenido %}
+
+{% block titulo %}
+    Listado
+{% endblock titulo %}

@@ -1,0 +1,10 @@
+<form action="{% url 'polls:enviado' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Incidencia</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <label for="mail">Ingresa tu correo:<input type="email" name="mail" id="mail"></label><br>
+            <label for="desc">Explica la incidencia<input type="text" name="desc" id="inc"></label><br>
+    </fieldset>
+    <input type="submit" value="Informar">
+</form>
